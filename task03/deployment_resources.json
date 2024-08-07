@@ -4,6 +4,7 @@
       "Statement": [
         {
           "Action": [
+            "lambda:InvokeFunction",
             "lambda:AddPermission",
             "iam:GetPolicy",
             "logs:CreateLogGroup",
@@ -32,8 +33,23 @@
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
-          "responses": [],
-          "integration_responses": [],
+          "responses": {
+            "200": {
+              "selection_pattern": "",
+              "status_code": 200,
+              "response_templates": {
+                "application/json": "{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}"
+              }
+            }
+          },
+          "integration_responses": {
+            "200": {
+              "selection_pattern": "",
+              "response_templates": {
+                "application/json": "{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}"
+              }
+            }
+          },
           "default_error_pattern": true
         }
       }
