@@ -4,6 +4,7 @@
       "Statement": [
         {
           "Action": [
+            "Action:lambda:AddPermission",
             "iam:GetPolicy",
             "logs:CreateLogGroup",
             "logs:CreateLogStream",
@@ -33,7 +34,7 @@
           "responses": [],
           "integration_responses": [],
           "default_error_pattern": true,
-          "lambda_name": "hello_world"
+          "lambda_name": "arn:aws:lambda:eu-central-1:196241772369:function:cmtr-60b8d96c-hello_world-test"
         }
       }
     }
