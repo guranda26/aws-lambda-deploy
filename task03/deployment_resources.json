@@ -22,7 +22,12 @@
   "task3_api": {
     "resource_type": "api_gateway",
     "deploy_stage": "api",
-    "dependencies": [],
+    "dependencies": [
+      {
+        "resource_name": "lambda_name",
+        "resource_type": "lambda"
+      }
+    ],
     "resources": {
       "/hello": {
         "enable_cors": false,
@@ -33,23 +38,29 @@
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
-          "responses": {
-            "200": {
-              "selection_pattern": "",
-              "status_code": 200,
+          "responses": [
+            {
+              "status_code": "200",
+              "response_parameters": {
+                "method.response.header.Content-Type": "'application/json'"
+              },
+              "response_models": {
+                "application/json": "Empty"
+              }
+            }
+          ],
+          "integration_responses": [
+            {
+              "status_code": "200",
+              "lambda_error_regex": "",
+              "response_parameters": {
+                "method.response.header.Content-Type": "'application/json'"
+              },
               "response_templates": {
                 "application/json": "{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}"
               }
             }
-          },
-          "integration_responses": {
-            "200": {
-              "selection_pattern": "",
-              "response_templates": {
-                "application/json": "{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}"
-              }
-            }
-          },
+          ],
           "default_error_pattern": true
         }
       }
