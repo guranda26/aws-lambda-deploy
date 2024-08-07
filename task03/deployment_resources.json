@@ -66,7 +66,7 @@
             }
           ],
           "default_error_pattern": true,
-          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:196241772369:function:cmtr-60b8d96c-hello_world-test/invocations"
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:196241772369:function:cmtr-60b8d96c-hello_world/invocations"
         }
       }
     }
