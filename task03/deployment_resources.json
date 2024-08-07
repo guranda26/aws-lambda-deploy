@@ -4,6 +4,7 @@
       "Statement": [
         {
           "Action": [
+            "iam:GetPolicy",
             "logs:CreateLogGroup",
             "logs:CreateLogStream",
             "logs:PutLogEvents",
