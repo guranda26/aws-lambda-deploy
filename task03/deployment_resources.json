@@ -24,6 +24,21 @@
     "deploy_stage": "api",
     "dependencies": [],
     "resources": {
+      "/": {
+        "enable_cors": false,
+        "GET": {
+          "enable_proxy": true,
+          "authorization_type": "NONE",
+          "integration_type": "lambda",
+          "lambda_name": "api-handler",
+          "api_key_required": false,
+          "method_request_parameters": {},
+          "integration_request_body_template": {},
+          "responses": [],
+          "integration_responses": [],
+          "default_error_pattern": true
+        }
+      },
       "/hello": {
         "enable_cors": false,
         "GET": {
@@ -51,7 +66,7 @@
             }
           ],
           "default_error_pattern": true,
-          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:123456789012:function:hello_world/invocations"
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:196241772369:function:cmtr-60b8d96c-hello_world-test/invocations"
         }
       }
     }
