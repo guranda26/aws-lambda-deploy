@@ -22,12 +22,7 @@
   "task3_api": {
     "resource_type": "api_gateway",
     "deploy_stage": "api",
-    "dependencies": [
-      {
-        "resource_name": "lambda_name",
-        "resource_type": "lambda"
-      }
-    ],
+    "dependencies": [],
     "resources": {
       "/hello": {
         "enable_cors": false,
