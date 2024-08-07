@@ -36,9 +36,6 @@
           "responses": [
             {
               "status_code": "200",
-              "response_parameters": {
-                "method.response.header.Content-Type": "'application/json'"
-              },
               "response_models": {
                 "application/json": "Empty"
               }
@@ -48,15 +45,13 @@
             {
               "status_code": "200",
               "lambda_error_regex": "",
-              "response_parameters": {
-                "method.response.header.Content-Type": "'application/json'"
-              },
               "response_templates": {
                 "application/json": "{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}"
               }
             }
           ],
-          "default_error_pattern": true
+          "default_error_pattern": true,
+          "uri": "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:123456789012:function:hello_world/invocations"
         }
       }
     }
