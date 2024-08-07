@@ -4,7 +4,7 @@
       "Statement": [
         {
           "Action": [
-            "Action:lambda:AddPermission",
+            "lambda:AddPermission",
             "iam:GetPolicy",
             "logs:CreateLogGroup",
             "logs:CreateLogStream",
